@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Do Rzeczy · Tom 1 · Komendy</title>
+  <title>AI Made Simple · Book 1 · Ready-to-Copy Prompts</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  
+
   <style>
     :root {
       --navy:       #0E1C36;
@@ -48,12 +48,12 @@
 
     /* ── HEADER ── */
     header {
-  position: relative;
-  text-align: center;
-  padding: 56px 24px 44px;
-  border-bottom: 1px solid var(--border);
-  overflow: visible;
-}
+      position: relative;
+      text-align: center;
+      padding: 56px 24px 44px;
+      border-bottom: 1px solid var(--border);
+      overflow: visible;
+    }
 
     header::after {
       content: '';
@@ -79,7 +79,7 @@
 
     .tom-badge {
       display: inline-block;
-      background: var(--orange-dim);
+      background: rgba(197,87,10,0.2);
       color: var(--orange);
       font-family: 'DM Sans', sans-serif;
       font-weight: 600;
@@ -88,27 +88,45 @@
       text-transform: uppercase;
       padding: 4px 14px;
       border-radius: 20px;
-      border: 1px solid var(--orange-dim);
+      border: 1px solid rgba(249,115,22,0.35);
       margin-bottom: 18px;
     }
 
-    header h1 {
-     
+    .header-series {
       font-family: 'Outfit', Arial, sans-serif;
-      font-size: clamp(2rem, 5vw, 2.9rem);
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
       font-weight: 600;
-      line-height: 1.5;
-      margin-bottom: 8px;
+      letter-spacing: 0.06em;
+      color: var(--glow);
+      margin-bottom: 6px;
+      opacity: 0.85;
+    }
+
+    header h1 {
+      font-family: 'Outfit', Arial, sans-serif;
+      font-size: clamp(1.55rem, 4vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 10px;
       background: linear-gradient(135deg, #fff 30%, var(--glow) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
-    header .subtitle {
-      font-size: 1.3rem;
+    .header-tagline {
+      font-size: clamp(0.88rem, 2vw, 1.05rem);
+      color: #93C5FD;
+      font-weight: 500;
+      margin-bottom: 4px;
+      line-height: 1.5;
+    }
+
+    .header-subtitle-small {
+      font-size: 0.82rem;
       color: var(--muted);
-      margin-bottom: 20px;
+      margin-bottom: 22px;
+      font-style: italic;
     }
 
     .header-tip {
@@ -157,6 +175,13 @@
     .nav-item:hover { color: var(--white); }
     .nav-item.active { color: var(--orange); border-bottom-color: var(--orange); }
 
+    .nav-sep {
+      flex-shrink: 0;
+      width: 1px;
+      background: var(--border);
+      margin: 10px 6px;
+    }
+
     /* ── MAIN LAYOUT ── */
     main {
       position: relative;
@@ -171,7 +196,6 @@
       padding-top: 48px;
     }
 
-    /* POPRAWKA: usunięto zbędny nawias i overflow:visible który powodował problem */
     .chapter-header {
       display: flex;
       align-items: center;
@@ -182,8 +206,14 @@
       border-bottom: 1px solid var(--border);
     }
 
+    .chapter-icon {
+      font-size: 1.6rem;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
     .chapter-info h2 {
-  font-family: 'Outfit, Arial, sans-serif;
+      font-family: 'Outfit', Arial, sans-serif;
       font-size: 1.25rem;
       font-weight: 700;
       color: var(--white);
@@ -193,6 +223,57 @@
     .chapter-info p {
       font-size: 0.82rem;
       color: var(--muted);
+    }
+
+    /* ── ŚCIĄGAWKA INFO CARD ── */
+    .sciagawka-card {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--glow);
+      border-radius: 12px;
+      padding: 22px 24px;
+      margin-bottom: 14px;
+    }
+
+    .sciagawka-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--glow);
+      margin-bottom: 10px;
+    }
+
+    .sciagawka-card p {
+      font-size: 0.875rem;
+      line-height: 1.7;
+      color: #CBD5E1;
+      margin-bottom: 12px;
+    }
+
+    .sciagawka-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .sciagawka-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      background: rgba(129,140,248,0.1);
+      border: 1px solid rgba(129,140,248,0.25);
+      color: var(--glow);
+      transition: all 0.2s;
+    }
+    .sciagawka-link:hover {
+      background: rgba(129,140,248,0.18);
+      border-color: rgba(129,140,248,0.5);
     }
 
     /* ── KOMENDA CARD ── */
@@ -263,6 +344,12 @@
       white-space: pre-wrap;
       margin-bottom: 12px;
       font-family: 'DM Sans', sans-serif;
+    }
+
+    /* placeholder fields highlighting */
+    .komenda-tekst .placeholder {
+      color: #93C5FD;
+      font-style: italic;
     }
 
     .komenda-actions {
@@ -380,12 +467,219 @@
     .footer-tom-link.coming:hover { border-color: rgba(37,99,235,0.3); color: #93C5FD; }
     .footer-copy { font-size: 0.78rem; color: #475569; }
 
+    /* ── NEWSLETTER & REVIEW SECTIONS ── */
+    .bonus-section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 48px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .bonus-card {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px 36px;
+      margin-bottom: 20px;
+    }
+
+    .bonus-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .bonus-card-icon { font-size: 1.5rem; line-height: 1; }
+
+    .bonus-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .bonus-card p {
+      font-size: 0.9rem;
+      color: #CBD5E1;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .bonus-card p small { color: #475569; font-size: 0.78rem; }
+
+    .newsletter-form {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .newsletter-input {
+      flex: 1;
+      min-width: 200px;
+      background: var(--navy-inner);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 11px 16px;
+      font-size: 0.9rem;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--white);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .newsletter-input:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.2);
+    }
+
+    .newsletter-input::placeholder { color: #475569; }
+
+    .btn-newsletter {
+      background: var(--blue);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 11px 22px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      font-family: 'DM Sans', sans-serif;
+      cursor: pointer;
+      transition: background 0.15s, box-shadow 0.15s;
+      white-space: nowrap;
+    }
+
+    .btn-newsletter:hover {
+      background: var(--blue-light);
+      box-shadow: 0 0 16px rgba(37,99,235,0.35);
+    }
+
+    .review-card {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--orange);
+      border-radius: 14px;
+      padding: 32px 36px;
+      text-align: center;
+    }
+
+    .review-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .review-card p {
+      font-size: 0.9rem;
+      color: #CBD5E1;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .review-card p .highlight { color: var(--orange); font-weight: 600; }
+
+    .review-buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-review {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--orange);
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-review:hover {
+      background: #ea6c0a;
+      box-shadow: 0 0 16px rgba(249,115,22,0.4);
+    }
+
+    .amazon-disclaimer {
+      padding: 12px 18px;
+      background: rgba(37,99,235,0.06);
+      border: 1px solid rgba(37,99,235,0.15);
+      border-radius: 8px;
+      font-size: 0.78rem;
+      color: #64748B;
+      line-height: 1.6;
+      text-align: center;
+      margin: 12px auto 0;
+      max-width: 680px;
+    }
+
+    .footer-promo {
+      max-width: 700px;
+      margin: 0 auto 24px;
+      background: linear-gradient(135deg, rgba(37,99,235,0.13) 0%, rgba(129,140,248,0.10) 100%);
+      border: 1px solid rgba(129,140,248,0.35);
+      border-top: 3px solid var(--glow);
+      border-radius: 14px;
+      padding: 24px 28px;
+      text-align: left;
+    }
+
+    .footer-promo-heading {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .footer-promo-text {
+      font-size: 0.93rem;
+      line-height: 1.7;
+      color: #CBD5E1;
+      margin-bottom: 16px;
+    }
+
+    .footer-promo-text strong {
+      color: var(--white);
+    }
+
+    .footer-promo-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--orange);
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      padding: 10px 22px;
+      border-radius: 8px;
+      transition: background 0.2s, box-shadow 0.2s;
+      letter-spacing: 0.02em;
+    }
+
+    .footer-promo-cta:hover {
+      background: #ea6c0a;
+      box-shadow: 0 0 20px rgba(249,115,22,0.4);
+    }
+
     /* ── MOBILE ── */
     @media (max-width: 540px) {
       header { padding: 40px 16px 32px; }
       .chapter-header { gap: 10px; }
       .btn-kopiuj { width: 100%; justify-content: center; }
       .komenda-actions { flex-direction: column; align-items: flex-start; }
+      .sciagawka-links { flex-direction: column; }
     }
   </style>
 </head>
@@ -393,275 +687,420 @@
 
 <header>
   <div class="header-glow"></div>
-  <div class="tom-badge">Tom 1 · AI Do Rzeczy</div>
-  <h1>TOM 1 — Komunikacja i Trudne Maile</h1>
-  <p class="subtitle">Leszek Ignatowicz · aidorzeczy.com</p>
+  <div class="tom-badge">Book 1 · AI Made Simple</div>
+  <div class="header-series">AI Made Simple</div>
+  <h1>Book 1: Communication &amp; Difficult Emails.<br>How to stop dreading your inbox.</h1>
+  <div class="header-tagline">How to say no assertively and save hours of stress — no tech knowledge required.</div>
+  <div class="header-subtitle-small">A plain-English guide for everyone. · Leszek Ignatowicz · book1.aidorzeczy.com</div>
   <div class="header-tip">
     <span class="icon">💡</span>
-    Kliknij <strong>Kopiuj komendę</strong>, a następnie wklej ją w ChatGPT lub Claude
+    Click <strong>Copy prompt</strong>, then paste it into ChatGPT or Claude
   </div>
 </header>
 
 <nav class="chapter-nav" id="chapNav">
-  <a class="nav-item active" href="#r1" onclick="setActive(this)">← Rozdział 1 →</a>
-  <a class="nav-item" href="#r2" onclick="setActive(this)">← Rozdział 2 →</a>
-  <a class="nav-item" href="#r3" onclick="setActive(this)">← Rozdział 3 →</a>
-  <a class="nav-item" href="#r4" onclick="setActive(this)">← Rozdział 4 →</a>
+  <a class="nav-item active" href="#r1" onclick="setActive(this)">Ch. 1 — Saying No</a>
+  <a class="nav-item" href="#r2" onclick="setActive(this)">Ch. 2 — Complaints</a>
+  <a class="nav-item" href="#r3" onclick="setActive(this)">Ch. 3 — Jargon</a>
+  <a class="nav-item" href="#r4" onclick="setActive(this)">Ch. 4 — Privacy</a>
+  <div class="nav-sep"></div>
+  <a class="nav-item" href="#cheatsheet" onclick="setActive(this)">Cheat Sheet</a>
+  <a class="nav-item" href="#advanced" onclick="setActive(this)">Advanced</a>
 </nav>
 
 <main>
 
   <div class="progress-bar">
-    <span class="progress-label">Skopiowane komendy:</span>
+    <span class="progress-label">Prompts copied:</span>
     <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
-    <span class="progress-count" id="progressCount">0 / 24</span>
+    <span class="progress-count" id="progressCount">0 / 8</span>
   </div>
 
-  <!-- ROZDZIAŁ 1 -->
+  <!-- ═══ CHAPTER 1 ═══ -->
   <section class="chapter" id="r1">
     <div class="chapter-header">
+      <div class="chapter-icon">✋</div>
       <div class="chapter-info">
-        <h2>← Wpisz nazwę Rozdziału 1 →</h2>
-        <p>Komendy 1–6 · kliknij przycisk, wklej w ChatGPT lub Claude</p>
+        <h2>Chapter 1: The Art of Saying No — Without the Guilt</h2>
+        <p>Prompt No. 1 · Write a firm but polite refusal that doesn't damage the relationship</p>
       </div>
     </div>
 
     <div class="komenda-card">
-      <div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·01</span><span class="komenda-title">← Wpisz nazwę komendy 1 →</span></div></div>
-      <div class="komenda-body">
-        <div class="komenda-tekst" id="k01">← Wklej tutaj treść komendy 1. →</div>
-        <div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k01', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div>
+      <div class="komenda-head">
+        <div class="komenda-label">
+          <span class="komenda-num">No. 1</span>
+          <span class="komenda-title">Assertive refusal — 3 versions to choose from</span>
+        </div>
       </div>
-    </div>
-
-    <div class="komenda-card">
-      <div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·02</span><span class="komenda-title">← Wpisz nazwę komendy 2 →</span></div></div>
       <div class="komenda-body">
-        <div class="komenda-tekst" id="k02">← Wklej tutaj treść komendy 2. →</div>
-        <div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k02', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div>
-      </div>
-    </div>
+        <div class="komenda-tekst" id="k1">Act as a professional, highly courteous office assistant.
 
-    <div class="komenda-card">
-      <div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·03</span><span class="komenda-title">← Wpisz nazwę komendy 3 →</span></div></div>
-      <div class="komenda-body">
-        <div class="komenda-tekst" id="k03">← Wklej tutaj treść komendy 3. →</div>
-        <div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k03', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div>
-      </div>
-    </div>
+Write a refusal email on my behalf. The tone should be firm but calm — no negativity, no hard feelings.
 
-    <div class="komenda-card">
-      <div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·04</span><span class="komenda-title">← Wpisz nazwę komendy 4 →</span></div></div>
-      <div class="komenda-body">
-        <div class="komenda-tekst" id="k04">← Wklej tutaj treść komendy 4. →</div>
-        <div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k04', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div>
-      </div>
-    </div>
+Please suggest 3 different versions of the message for me to choose from.
 
-    <div class="komenda-card">
-      <div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·05</span><span class="komenda-title">← Wpisz nazwę komendy 5 →</span></div></div>
-      <div class="komenda-body">
-        <div class="komenda-tekst" id="k05">← Wklej tutaj treść komendy 5. →</div>
-        <div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k05', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div>
-      </div>
-    </div>
+I am writing to: [Person's name or role, e.g. Mark from sales / our supplier]
+Subject: [Briefly describe the request, e.g. preparing a report by tomorrow / joining an extra meeting]
+My reason for declining: [Your real reason, e.g. I already have tasks scheduled / I'm out of the office that day]
 
-    <div class="komenda-card">
-      <div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·06</span><span class="komenda-title">← Wpisz nazwę komendy 6 →</span></div></div>
-      <div class="komenda-body">
-        <div class="komenda-tekst" id="k06">← Wklej tutaj treść komendy 6. →</div>
-        <div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k06', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div>
+Please end the email with a warm, friendly sign-off.</div>
+        <div class="komenda-actions">
+          <button class="btn-kopiuj" onclick="kopiuj('k1', this)">📋 Copy prompt</button>
+          <span class="copy-hint">Ctrl+V or long-press → Paste</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ROZDZIAŁ 2 -->
+  <!-- ═══ CHAPTER 2 ═══ -->
   <section class="chapter" id="r2">
     <div class="chapter-header">
+      <div class="chapter-icon">⚖️</div>
       <div class="chapter-info">
-        <h2>← Wpisz nazwę Rozdziału 2 →</h2>
-        <p>Komendy 7–12</p>
+        <h2>Chapter 2: The Complaint Crusher</h2>
+        <p>Prompt No. 2 · A formal complaint letter that reads like it came from a solicitor's office</p>
       </div>
     </div>
 
     <div class="komenda-card">
-      <div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·07</span><span class="komenda-title">← Wpisz nazwę komendy 7 →</span></div></div>
-      <div class="komenda-body">
-        <div class="komenda-tekst" id="k07">← Wklej tutaj treść komendy 7. →</div>
-        <div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k07', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div>
+      <div class="komenda-head">
+        <div class="komenda-label">
+          <span class="komenda-num">No. 2</span>
+          <span class="komenda-title">Formal complaint to a shop or company</span>
+        </div>
       </div>
-    </div>
-
-    <div class="komenda-card">
-      <div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·08</span><span class="komenda-title">← Wpisz nazwę komendy 8 →</span></div></div>
       <div class="komenda-body">
-        <div class="komenda-tekst" id="k08">← Wklej tutaj treść komendy 8. →</div>
-        <div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k08', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div>
-      </div>
-    </div>
+        <div class="komenda-tekst" id="k2">Act as an experienced consumer rights solicitor.
 
-    <div class="komenda-card">
-      <div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·09</span><span class="komenda-title">← Wpisz nazwę komendy 9 →</span></div></div>
-      <div class="komenda-body">
-        <div class="komenda-tekst" id="k09">← Wklej tutaj treść komendy 9. →</div>
-        <div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k09', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div>
-      </div>
-    </div>
+Write a formal complaint letter on my behalf regarding a faulty product.
 
-    <div class="komenda-card">
-      <div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·10</span><span class="komenda-title">← Wpisz nazwę komendy 10 →</span></div></div>
-      <div class="komenda-body">
-        <div class="komenda-tekst" id="k10">← Wklej tutaj treść komendy 10. →</div>
-        <div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k10', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div>
-      </div>
-    </div>
+The tone should be firm, factual, and completely free of emotion.
 
-    <div class="komenda-card">
-      <div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·11</span><span class="komenda-title">← Wpisz nazwę komendy 11 →</span></div></div>
-      <div class="komenda-body">
-        <div class="komenda-tekst" id="k11">← Wklej tutaj treść komendy 11. →</div>
-        <div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k11', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div>
-      </div>
-    </div>
+Make it clear that I know my consumer rights — while remaining polite and professional.
 
-    <div class="komenda-card">
-      <div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·12</span><span class="komenda-title">← Wpisz nazwę komendy 12 →</span></div></div>
-      <div class="komenda-body">
-        <div class="komenda-tekst" id="k12">← Wklej tutaj treść komendy 12. →</div>
-        <div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k12', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div>
+Product: [What you bought, e.g. running shoes, brand X / smart TV, brand Y]
+Date of purchase: [e.g. 15 May 2025 / about three months ago]
+Fault: [Brief description, e.g. the sole on the left shoe came completely off / the screen suddenly stopped turning on]
+My request: [What you want, e.g. full refund / replacement with a new working unit / free repair]
+
+End the letter formally, request a positive resolution, and state that I expect a response within 14 days as required by law.</div>
+        <div class="komenda-actions">
+          <button class="btn-kopiuj" onclick="kopiuj('k2', this)">📋 Copy prompt</button>
+          <span class="copy-hint">Ctrl+V or long-press → Paste</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ROZDZIAŁ 3 -->
+  <!-- ═══ CHAPTER 3 ═══ -->
   <section class="chapter" id="r3">
     <div class="chapter-header">
+      <div class="chapter-icon">🔍</div>
       <div class="chapter-info">
-        <h2>← Wpisz nazwę Rozdziału 3 →</h2>
-        <p>Komendy 13–18</p>
+        <h2>Chapter 3: The Jargon Decoder</h2>
+        <p>Prompt No. 3 · Translate any official letter into plain English — and find out what to do next</p>
       </div>
     </div>
 
     <div class="komenda-card">
-      <div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·13</span><span class="komenda-title">← Wpisz nazwę komendy 13 →</span></div></div>
-      <div class="komenda-body">
-        <div class="komenda-tekst" id="k13">← Wklej tutaj treść komendy 13. →</div>
-        <div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k13', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div>
+      <div class="komenda-head">
+        <div class="komenda-label">
+          <span class="komenda-num">No. 3</span>
+          <span class="komenda-title">Plain-English translation of official jargon</span>
+        </div>
       </div>
-    </div>
-
-    <div class="komenda-card">
-      <div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·14</span><span class="komenda-title">← Wpisz nazwę komendy 14 →</span></div></div>
       <div class="komenda-body">
-        <div class="komenda-tekst" id="k14">← Wklej tutaj treść komendy 14. →</div>
-        <div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k14', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div>
-      </div>
-    </div>
+        <div class="komenda-tekst" id="k3">Read the message below — written in official or legal language.
 
-    <div class="komenda-card">
-      <div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·15</span><span class="komenda-title">← Wpisz nazwę komendy 15 →</span></div></div>
-      <div class="komenda-body">
-        <div class="komenda-tekst" id="k15">← Wklej tutaj treść komendy 15. →</div>
-        <div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k15', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div>
-      </div>
-    </div>
+Translate it into plain, everyday English — no legal background assumed.
 
-    <div class="komenda-card">
-      <div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·16</span><span class="komenda-title">← Wpisz nazwę komendy 16 →</span></div></div>
-      <div class="komenda-body">
-        <div class="komenda-tekst" id="k16">← Wklej tutaj treść komendy 16. →</div>
-        <div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k16', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div>
-      </div>
-    </div>
+Answer these 3 questions in short bullet points:
 
-    <div class="komenda-card">
-      <div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·17</span><span class="komenda-title">← Wpisz nazwę komendy 17 →</span></div></div>
-      <div class="komenda-body">
-        <div class="komenda-tekst" id="k17">← Wklej tutaj treść komendy 17. →</div>
-        <div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k17', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div>
-      </div>
-    </div>
+1. What do they actually want from me?
 
-    <div class="komenda-card">
-      <div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·18</span><span class="komenda-title">← Wpisz nazwę komendy 18 →</span></div></div>
-      <div class="komenda-body">
-        <div class="komenda-tekst" id="k18">← Wklej tutaj treść komendy 18. →</div>
-        <div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k18', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div>
+2. What do I need to do right now?
+   (e.g. pay something, sign something, call someone, or can I ignore it?)
+
+3. Is there a deadline? If so, when exactly?
+
+Here is the text: [Paste the full letter or email here]</div>
+        <div class="komenda-actions">
+          <button class="btn-kopiuj" onclick="kopiuj('k3', this)">📋 Copy prompt</button>
+          <span class="copy-hint">Ctrl+V or long-press → Paste</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ROZDZIAŁ 4 -->
+  <!-- ═══ CHAPTER 4 ═══ -->
   <section class="chapter" id="r4">
     <div class="chapter-header">
+      <div class="chapter-icon">🔒</div>
       <div class="chapter-info">
-        <h2>← Wpisz nazwę Rozdziału 4 →</h2>
-        <p>Komendy 19–24</p>
+        <h2>Chapter 4: The Safe Harbour</h2>
+        <p>Prompt No. 4 · Write about a sensitive workplace situation without sharing any real names</p>
       </div>
     </div>
 
     <div class="komenda-card">
-      <div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·19</span><span class="komenda-title">← Wpisz nazwę komendy 19 →</span></div></div>
+      <div class="komenda-head">
+        <div class="komenda-label">
+          <span class="komenda-num">No. 4</span>
+          <span class="komenda-title">Anonymous message about a difficult colleague</span>
+        </div>
+      </div>
       <div class="komenda-body">
-        <div class="komenda-tekst" id="k19">← Wklej tutaj treść komendy 19. →</div>
-        <div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k19', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div>
+        <div class="komenda-tekst" id="k4">I need to write a sensitive email to my manager about a colleague.
+
+To protect privacy, I'm using only the placeholder [Employee X].
+
+Turn my rough notes into a calm, professional request for a meeting.
+
+Do not use any real names. Keep [Employee X] throughout.
+
+Here are my notes: [Brief description of the situation and why you need your manager to intervene — using [Employee X] instead of the real name]</div>
+        <div class="komenda-actions">
+          <button class="btn-kopiuj" onclick="kopiuj('k4', this)">📋 Copy prompt</button>
+          <span class="copy-hint">Ctrl+V or long-press → Paste</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CHEAT SHEET ═══ -->
+  <section class="chapter" id="cheatsheet">
+    <div class="chapter-header">
+      <div class="chapter-icon">📌</div>
+      <div class="chapter-info">
+        <h2>Cheat Sheet — All Prompts at a Glance</h2>
+        <p>Prompts No. 1–4 in short form · Grab the full versions from the chapters above for best results</p>
+      </div>
+    </div>
+    <div class="komenda-card">
+      <div class="komenda-body" style="padding:20px 24px;">
+        <p style="color:var(--muted);font-size:0.88rem;margin-bottom:12px;">These are condensed versions. The full prompts in each chapter give the AI more context and produce better results.</p>
+        <p style="color:var(--white);font-size:0.9rem;margin:0;"><strong>No. 1</strong> — Assertive refusal → Ch. 1 &nbsp;|&nbsp; <strong>No. 2</strong> — Complaint letter → Ch. 2 &nbsp;|&nbsp; <strong>No. 3</strong> — Jargon decoder → Ch. 3 &nbsp;|&nbsp; <strong>No. 4</strong> — Anonymous colleague → Ch. 4</p>
+        <p style="color:var(--muted);font-size:0.85rem;margin-top:12px;">All prompts also available at <a href="https://book1.aidorzeczy.com" style="color:var(--orange);">book1.aidorzeczy.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ADVANCED ═══ -->
+  <section class="chapter" id="advanced">
+    <div class="chapter-header">
+      <div class="chapter-icon">🚀</div>
+      <div class="chapter-info">
+        <h2>Advanced Prompts — Appendix 2</h2>
+        <p>Prompts No. 5–8 · More powerful versions for complex situations</p>
       </div>
     </div>
 
     <div class="komenda-card">
-      <div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·20</span><span class="komenda-title">← Wpisz nazwę komendy 20 →</span></div></div>
+      <div class="komenda-head">
+        <div class="komenda-label">
+          <span class="komenda-num">No. 5</span>
+          <span class="komenda-title">Turning down an important client without burning the bridge</span>
+        </div>
+      </div>
       <div class="komenda-body">
-        <div class="komenda-tekst" id="k20">← Wklej tutaj treść komendy 20. →</div>
-        <div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k20', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div>
+        <div class="komenda-tekst" id="k5">Act as a business diplomacy expert.
+
+I need to decline a proposal from an important client, but I want them to feel genuinely valued and to keep the relationship strong.
+
+Write a gracious refusal email that clearly closes this specific request while offering an alternative.
+
+Client: [Client name or placeholder]
+Their proposal: [What they asked you to do]
+Why I'm declining: [e.g. we're fully booked / outside our expertise]
+Alternative I'm offering: [e.g. recommending another provider / revisiting in 6 months]
+
+The message should be warm and respectful, but 100% clear that this particular request is closed for now.</div>
+        <div class="komenda-actions">
+          <button class="btn-kopiuj" onclick="kopiuj('k5', this)">📋 Copy prompt</button>
+          <span class="copy-hint">Ctrl+V or long-press → Paste</span>
+        </div>
       </div>
     </div>
 
     <div class="komenda-card">
-      <div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·21</span><span class="komenda-title">← Wpisz nazwę komendy 21 →</span></div></div>
+      <div class="komenda-head">
+        <div class="komenda-label">
+          <span class="komenda-num">No. 6</span>
+          <span class="komenda-title">Round two: when the shop rejects your complaint</span>
+        </div>
+      </div>
       <div class="komenda-body">
-        <div class="komenda-tekst" id="k21">← Wklej tutaj treść komendy 21. →</div>
-        <div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k21', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div>
+        <div class="komenda-tekst" id="k6">Act as a tough, relentless consumer rights lawyer.
+
+The shop has just rejected my complaint without proper grounds.
+
+Write a formal appeal letter on my behalf.
+
+Tone: very firm, cold, and clear that I will not drop this.
+
+Product: [What you complained about]
+The shop's excuse: [What they said, e.g. "mechanical damage caused by user"]
+My counter-argument: [e.g. used exactly as instructed; fault appeared after one month]
+My demand: [Replacement / refund — state clearly you're maintaining your original request]
+
+End the letter with a firm statement that if this appeal is ignored, I will escalate the matter to the relevant consumer protection authority.</div>
+        <div class="komenda-actions">
+          <button class="btn-kopiuj" onclick="kopiuj('k6', this)">📋 Copy prompt</button>
+          <span class="copy-hint">Ctrl+V or long-press → Paste</span>
+        </div>
       </div>
     </div>
 
     <div class="komenda-card">
-      <div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·22</span><span class="komenda-title">← Wpisz nazwę komendy 22 →</span></div></div>
+      <div class="komenda-head">
+        <div class="komenda-label">
+          <span class="komenda-num">No. 7</span>
+          <span class="komenda-title">Understand the jargon and reply in one go</span>
+        </div>
+      </div>
       <div class="komenda-body">
-        <div class="komenda-tekst" id="k22">← Wklej tutaj treść komendy 22. →</div>
-        <div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k22', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div>
+        <div class="komenda-tekst" id="k7">Act as a helpful, knowledgeable civil servant.
+
+Below is a complicated official letter I have just received.
+
+Please do two things:
+
+Step 1: Explain in 2 plain sentences what they want from me.
+
+Step 2: Write a formal, official reply to this authority on my behalf.
+
+My response (what I want to tell them): [e.g. I'm attaching the missing documents / I paid this amount two days ago, confirmation attached / I disagree with this decision]
+
+Here is the letter I received: [Paste the content here — remember to remove personal details like your ID number or bank account first]</div>
+        <div class="komenda-actions">
+          <button class="btn-kopiuj" onclick="kopiuj('k7', this)">📋 Copy prompt</button>
+          <span class="copy-hint">Ctrl+V or long-press → Paste</span>
+        </div>
       </div>
     </div>
 
     <div class="komenda-card">
-      <div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·23</span><span class="komenda-title">← Wpisz nazwę komendy 23 →</span></div></div>
+      <div class="komenda-head">
+        <div class="komenda-label">
+          <span class="komenda-num">No. 8</span>
+          <span class="komenda-title">Negotiating a pay rise — safely</span>
+        </div>
+      </div>
       <div class="komenda-body">
-        <div class="komenda-tekst" id="k23">← Wklej tutaj treść komendy 23. →</div>
-        <div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k23', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div>
+        <div class="komenda-tekst" id="k8">Act as a top career coach.
+
+Help me write an email to my manager requesting a meeting to discuss a pay rise.
+
+The message must sound professional and be grounded in my recent achievements — but absolutely not arrogant.
+
+To protect my privacy, I am not sharing any real figures.
+
+Wherever a salary figure should appear, use these exact placeholders: [Current Salary] and [Target Salary].
+
+I will replace them with real numbers on my own device before sending.
+
+My recent achievements: [List briefly, e.g. delivered a major project solo / took on responsibilities from a departing colleague / improved team turnaround time]</div>
+        <div class="komenda-actions">
+          <button class="btn-kopiuj" onclick="kopiuj('k8', this)">📋 Copy prompt</button>
+          <span class="copy-hint">Ctrl+V or long-press → Paste</span>
+        </div>
       </div>
     </div>
 
-    <div class="komenda-card">
-      <div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·24</span><span class="komenda-title">← Wpisz nazwę komendy 24 →</span></div></div>
-      <div class="komenda-body">
-        <div class="komenda-tekst" id="k24">← Wklej tutaj treść komendy 24. →</div>
-        <div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k24', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div>
-      </div>
-    </div>
   </section>
 
 </main>
 
+<!-- ══ NEWSLETTER & REVIEW ══════════════════════════════════════════════ -->
+<div class="bonus-section">
+
+  <div class="bonus-card">
+    <div class="bonus-card-header">
+      <div class="bonus-card-icon">✉️</div>
+      <h3>Join the AI community and get your bonuses</h3>
+    </div>
+    <p>Sign up for my free newsletter to receive updates on new prompts, AI tool news, and upcoming books in the series.</p>
+    <div class="newsletter-form">
+      <input class="newsletter-input" type="email" id="nl1-email" placeholder="Your best email address">
+      <button class="btn-newsletter" id="nl1-btn" onclick="nlSubmit('nl1')">Sign me up →</button>
+    </div>
+    <div id="nl1-msg" style="min-height:18px;margin-top:10px;font-size:0.82rem;"></div>
+    <p style="margin-top:8px;margin-bottom:0;"><small>No spam. Unsubscribe at any time.</small></p>
+  </div>
+
+  <script>
+  async function nlSubmit(id) {
+    const email = document.getElementById(id+'-email').value.trim();
+    const msg   = document.getElementById(id+'-msg');
+    const btn   = document.getElementById(id+'-btn');
+    if (!email || !email.includes('@')) {
+      msg.style.color = '#EF4444';
+      msg.textContent = 'Please enter a valid email address.';
+      return;
+    }
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    msg.textContent = '';
+    try {
+      const r = await fetch('https://formspree.io/f/mkoqlrqa', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email, _subject: 'New subscriber — AI Made Simple Newsletter' })
+      });
+      if (r.ok) {
+        msg.style.color = '#22C55E';
+        msg.textContent = '✓ You\'re on the list!';
+        btn.textContent = '✓ Done!';
+        btn.style.background = 'var(--green-dim, #15803D)';
+        document.getElementById(id+'-email').value = '';
+      } else {
+        const d = await r.json();
+        msg.style.color = '#EF4444';
+        msg.textContent = d.errors ? d.errors.map(e=>e.message).join(', ') : 'Something went wrong. Try again.';
+        btn.disabled = false;
+        btn.textContent = 'Sign me up →';
+      }
+    } catch(e) {
+      msg.style.color = '#EF4444';
+      msg.textContent = 'Connection error. Please try again.';
+      btn.disabled = false;
+      btn.textContent = 'Sign me up →';
+    }
+  }
+  </script>
+
+  <div class="review-card">
+    <h3>Did my prompts make your life easier?</h3>
+    <p>Your opinion is the fuel for this series. If the knowledge in my ebooks saved you time, <span class="highlight">leaving a short, honest review on Amazon takes 30 seconds</span> — and helps me reach more people.</p>
+    <div class="review-buttons">
+      <a class="btn-review" href="LINK_DO_RECENZJI_TOM1_NA_AMAZONIE" target="_blank" rel="noopener">⭐ Review Book 1</a>
+      <a class="btn-review" href="LINK_DO_RECENZJI_TOM2_NA_AMAZONIE" target="_blank" rel="noopener">⭐ Review Book 2</a>
+      <a class="btn-review" href="LINK_DO_RECENZJI_TOM3_NA_AMAZONIE" target="_blank" rel="noopener">⭐ Review Book 3</a>
+    </div>
+  </div>
+
+</div>
+
 <footer>
   <div class="footer-tomy">
-    <a class="footer-tom-link current" href="#">★ Tom 1 — tu jesteś</a>
-    <a class="footer-tom-link coming" href="https://tom2.aidorzeczy.com">Tom 2 — dostępny wkrótce</a>
-    <a class="footer-tom-link coming" href="https://tom3.aidorzeczy.com">Tom 3 — dostępny wkrótce</a>
+    <a class="footer-tom-link current" href="#">★ Book 1 — you are here</a>
+    <a class="footer-tom-link coming" href="https://book2.aidorzeczy.com">Book 2 — Organisation &amp; Planning</a>
+    <a class="footer-tom-link coming" href="https://book3.aidorzeczy.com">Book 3 — Household Budget</a>
   </div>
-  <p class="footer-copy">AI Do Rzeczy · Leszek Ignatowicz · aidorzeczy.com</p>
+  <div class="footer-promo">
+    <div class="footer-promo-heading">✨ Ready to go further?</div>
+    <div class="footer-promo-text">
+      <strong>Book 2 — Organisation &amp; Planning</strong> and <strong>Book 3 — Household Budget</strong> are waiting for you on Amazon. Inside each ebook you'll find a unique access code that unlocks the full companion page — with all the ready-to-use prompts.
+    </div>
+    <a class="footer-promo-cta" href="https://ebooks.aidorzeczy.com">Find the Amazon links →</a>
+  </div>
+  <p class="footer-copy">AI Made Simple · Leszek Ignatowicz · book1.aidorzeczy.com</p>
+  <p class="amazon-disclaimer">This page is a free, optional companion to <em>AI Made Simple — Book 1</em> (available on Amazon), provided solely to make copying prompts more convenient. All prompts shown here are also available in full text inside the purchased e-book.</p>
 </footer>
 
 <script>
-  const TOTAL = 24;
+  const TOTAL = 8;
   const copied = new Set();
 
   function updateProgress() {
@@ -676,7 +1115,7 @@
     const tekst = el.innerText;
 
     const resetBtn = () => {
-      btn.textContent = '📋 Kopiuj komendę';
+      btn.textContent = '📋 Copy prompt';
       btn.classList.remove('success', 'error');
     };
 
@@ -691,13 +1130,13 @@
         ta.select();
         document.execCommand('copy');
         document.body.removeChild(ta);
-        btn.textContent = '✓ Skopiowano!';
+        btn.textContent = '✓ Copied!';
         btn.classList.add('success');
         copied.add(id);
         updateProgress();
         setTimeout(resetBtn, 2500);
       } catch {
-        btn.textContent = '⚠ Błąd — skopiuj ręcznie';
+        btn.textContent = '⚠ Error — copy manually';
         btn.classList.add('error');
         setTimeout(resetBtn, 3500);
       }
@@ -706,14 +1145,14 @@
 
     navigator.clipboard.writeText(tekst)
       .then(() => {
-        btn.textContent = '✓ Skopiowano!';
+        btn.textContent = '✓ Copied!';
         btn.classList.add('success');
         copied.add(id);
         updateProgress();
         setTimeout(resetBtn, 2500);
       })
       .catch(() => {
-        btn.textContent = '⚠ Błąd kopiowania';
+        btn.textContent = '⚠ Copy failed';
         btn.classList.add('error');
         setTimeout(resetBtn, 3000);
       });
